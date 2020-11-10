@@ -321,21 +321,21 @@ const CDataTable = props => {
   const currentItems = computedPage ? paginatedItems : sortedItems
 
   const tableFilterData = {
-    label: (tableFilter && tableFilter.label) || 'Filter:',
-    placeholder: (tableFilter && tableFilter.placeholder) || 'type string...'
+    label: (tableFilter && tableFilter.label) || 'Arama:',
+    placeholder: (tableFilter && tableFilter.placeholder) || 'Yazınız...'
   }
 
   const paginationSelect = {
-    label: (itemsPerPageSelect && itemsPerPageSelect.label) || 'Items per page:',
+    label: (itemsPerPageSelect && itemsPerPageSelect.label) || 'Sayfadaki Veri Sayısı:',
     values: (itemsPerPageSelect && itemsPerPageSelect.values) || [5, 10, 20, 50]
   }
 
   const noItemsText = (() => {
     const customValues = noItemsView || {}
     if (passedItems.length) {
-      return customValues.noResults || 'No filtering results'
+      return customValues.noResults || 'Filtrelenen veri yok'
     }
-    return customValues.noItems || 'No items'
+    return customValues.noItems || 'Veri yok'
   })()
 
   const isFiltered = tableFilterState || sorterState.column ||
